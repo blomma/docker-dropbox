@@ -1,0 +1,10 @@
+version: "2"
+services:
+    dropbox:
+        image: artsoftheinsane/dropbox
+        container_name: dropbox
+        volumes:
+            - /dropbox/Dropbox:/root/Dropbox
+            - /dropbox/.dropbox:/root/.dropbox
+            - /etc/localtime:/etc/localtime:ro
+        restart: unless-stopped

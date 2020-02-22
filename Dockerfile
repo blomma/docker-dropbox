@@ -1,13 +1,18 @@
 FROM ubuntu:18.04
 
+LABEL MAINTAINER="Mikael Hultgren <blomma@artsoftheinsane.com>"
+
+USER root
+
 RUN \
     apt-get update && \
-    apt-get install -y wget && \
-    cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf - && \
+    apt-get install -y wget python3 && \
     apt-get clean && \
-    mkdir /dropbox && \
-    ln -sf /dropbox /root/Dropbox
+    mkdir -p /root/Dropbox && \
+    mkdir -p /root/.dropbox
 
-VOLUME /dropbox
+COPY entrypoint.sh /
 
-CMD [ "/root/.dropbox-dist/dropboxd" ]
+VOLUME ["/root/Dropbox", "/root/.dropbox"]
+
+ENTRYPOINT ["/entrypoint.sh"]
