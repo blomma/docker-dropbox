@@ -12,6 +12,7 @@ RUN \
     mkdir -p /root/.dropbox
 
 COPY entrypoint.sh /
+RUN ["chmod", "+x", "/entrypoint.sh"]
 
 VOLUME ["/root/Dropbox", "/root/.dropbox"]
 
