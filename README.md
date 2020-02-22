@@ -3,7 +3,7 @@
 ## Quick start
 
 ```shell-session
-$ sudo mkdir -p /dropbox/Dropbox -p /dropbox/.dropbox
+$ sudo mkdir -p /dropbox/Dropbox /dropbox/.dropbox
 $ sudo docker-compose up -d
 ```
 
