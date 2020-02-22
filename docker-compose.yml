@@ -1,7 +1,7 @@
 version: "2"
 services:
     dropbox:
-        image: blomma/docker-dropbox
+        image: artsoftheinsane/dropbox
         container_name: dropbox
         volumes:
             - /dropbox/Dropbox:/root/Dropbox
