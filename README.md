@@ -3,8 +3,8 @@
 ## Quick start
 
 ```shell-session
-$ mkdir /dropbox/Dropbox /dropbox/.dropbox
-$ docker-compose up -d
+$ sudo mkdir -p /dropbox/Dropbox -p /dropbox/.dropbox
+$ sudo docker-compose up -d
 ```
 
 ### Upgrade
